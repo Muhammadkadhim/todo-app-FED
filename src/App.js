@@ -1,8 +1,11 @@
-import { useState, createContext } from "react";
-import Filter from "./components/filter/Filter";
+import React, { useState, createContext } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Header from "./components/header/Header";
-import NewForm from "./components/new-task-input/New";
-import TasksHolder from "./components/tasks-holder/TasksHolder";
+
+import Home from "./pages/Home";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Preferences from "./components/preferences/Preferences";
 
 export const TodoContext = createContext();
 
@@ -21,11 +24,11 @@ export default function App() {
                 }}
             >
                 <Header />
-                <main>
-                    <NewForm />
-                    <Filter />
-                    <TasksHolder />
-                </main>
+                <Routes>
+                    <Route path="/" element={<Home />}></Route>
+                    <Route path="/dashboard" element={<Dashboard />}></Route>
+                    <Route path="/dashboard" element={<Preferences />}></Route>
+                </Routes>
             </TodoContext.Provider>
         </div>
     );

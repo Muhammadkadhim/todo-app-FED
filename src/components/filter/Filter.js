@@ -4,7 +4,7 @@ import { TodoContext } from "../../App";
 import styles from "./Filter.module.css";
 export default function Filter() {
     const { filter } = useContext(TodoContext);
-    const [filterState, setFilterState] = filter;
+    const [setFilterState] = filter;
 
     return (
         <div className={styles.Filter}>

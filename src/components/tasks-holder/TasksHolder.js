@@ -7,9 +7,9 @@ import Task from "../../components/task/Task";
 import { FaTasks } from "react-icons/fa";
 
 export default function TaskHolder() {
-    const { tasks, filter } = useContext(TodoContext);
+    const { tasks } = useContext(TodoContext);
     const [tasksState, setTasksState] = tasks;
-    const [filterState] = filter;
+    // const [filterState, setFilterState] = filter;
 
     const [notification, setNotification] = useState(false);
 
@@ -26,13 +26,14 @@ export default function TaskHolder() {
     return (
         <div className={styles.TasksHolder}>
             {tasksState.map((task) => {
-                return filter === "all"
-                    ? "all"
-                    : filter === "completed"
-                    ? "completed"
-                    : filter === "uncompleted"
-                    ? "uncompleted"
-                    : "";
+                return (
+                    <Task
+                        key={task.id}
+                        task={task}
+                        tasksState={tasksState}
+                        setTasksState={setTasksState}
+                    />
+                );
             })}
 
             <div
