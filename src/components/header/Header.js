@@ -9,8 +9,12 @@ export default function Header() {
                     <Link to="/">Todo-App</Link>
                 </h1>
                 <div className={styles.Auth}>
-                    <button className={styles.Login}>Log In</button>
-                    <button className={styles.Register}>Register</button>
+                    <Link to="/dashboard" className={styles.Login}>
+                        Log In
+                    </Link>
+                    <Link to="/preferences" className={styles.Register}>
+                        Register
+                    </Link>
                 </div>
             </nav>
         </header>

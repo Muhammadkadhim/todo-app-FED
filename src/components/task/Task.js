@@ -1,6 +1,9 @@
 import styles from "./Task.module.css";
-import { FaTimes } from "react-icons/fa";
+import { FaTimes, FaUndoAlt } from "react-icons/fa";
+import { useState } from "react";
 export default function Task(props) {
+    const [updatedTask, setUpdatedTask] = useState(props.task.text);
+
     const deleteTaskHandler = () => {
         props.setTasksState(
             props.tasksState.filter((item) => item.id !== props.task.id)
@@ -16,18 +19,38 @@ export default function Task(props) {
             })
         );
     };
+    const updateHandler = (e) => {
+        e.preventDefault();
+        props.setTasksState(
+            props.tasksState.map((item) => {
+                if (item.id === props.task.id) {
+                    return { ...item, text: updatedTask };
+                }
+                return item;
+            })
+        );
+    };
 
     return (
         <div className={styles.Task} id="taskHolder">
-            <div>
+            <form onSubmit={updateHandler}>
                 <input
                     type="checkbox"
                     name="completed"
                     id="completed"
                     onChange={completionHandler}
                 />
-                <p className={styles.Task_Title}>{props.task.text}</p>
-            </div>
+                <input
+                    type="text"
+                    className={styles.Task_Title}
+                    value={updatedTask}
+                    onChange={(e) => {
+                        setUpdatedTask(e.target.value);
+                    }}
+                    onBlur={updateHandler}
+                />
+                {/* <p className={styles.Task_Title}>{props.task.text}</p> */}
+            </form>
             <button
                 className={`${styles.Delete} ${
                     props.task.completed ? styles.Appear : ""

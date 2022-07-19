@@ -25,7 +25,10 @@
 }
 
 .Task_Title {
-    width: 80%;
+    all: unset;
+    display: inline-block;
+    width: 400px;
+    margin-left: 1em;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
