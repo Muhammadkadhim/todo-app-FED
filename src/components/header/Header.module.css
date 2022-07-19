@@ -1,0 +1,55 @@
+.Header {
+    width: 100%;
+    height: 10vh;
+    padding: 1em;
+}
+
+.Nav {
+    width: 90%;
+    max-width: 1024px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #0074ff;
+}
+
+.Logo a {
+    text-decoration: none;
+}
+
+.Auth {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    gap: 2rem;
+}
+
+.Login {
+    all: unset;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.Register {
+    all: unset;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: #0074ff;
+    color: whitesmoke;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 300ms ease-out;
+}
+
+.Register:hover,
+.Register:focus {
+    background-color: #0048a1;
+}

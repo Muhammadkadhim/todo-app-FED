@@ -1,0 +1,15 @@
+.Filter {
+    width: 80%;
+    max-width: 600px;
+}
+
+.Filter_Selector {
+    float: right;
+    width: 150px;
+    height: 30px;
+    background: #ffc55c;
+    color: black;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
