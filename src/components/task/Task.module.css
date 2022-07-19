@@ -38,6 +38,7 @@
 @media screen and (max-width: 600px) {
     .Task_Title {
         width: 80%;
+        border: 1px solid red;
     }
 }
 
