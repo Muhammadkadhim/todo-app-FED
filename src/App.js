@@ -5,7 +5,7 @@ import Header from "./components/header/Header";
 
 import Home from "./pages/Home";
 import Dashboard from "./pages/dashboard/Dashboard";
-import Preferences from "./components/preferences/Preferences";
+import Preferences from "./pages/preferences/Preferences";
 
 export const TodoContext = createContext();
 
